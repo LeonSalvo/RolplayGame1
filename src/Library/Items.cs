@@ -4,7 +4,7 @@ namespace Library
 {
     public class Items
     {
-        public string Descripcion {get;set;}
+        public string Descripcion {get;}
         public int Daño {get;set;}
         public int Armadura {get;set;}
 
