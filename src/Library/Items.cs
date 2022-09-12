@@ -5,14 +5,12 @@ namespace Library
     public class Items
     {
         public string Descripcion {get;}
-        public int Daño {get;set;}
-        public int Armadura {get;set;}
+        public int ValorObjeto {get;set;}
 
-        public Items(string descripcion, int daño, int armadura)
+        public Items(string descripcion, int valorObjeto)
         {
             this.Descripcion = descripcion;
-            this.Daño = daño;
-            this.Armadura = armadura;
+            this.ValorObjeto = valorObjeto;
         }
     }
 }
