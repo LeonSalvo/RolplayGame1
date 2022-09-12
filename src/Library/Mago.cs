@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 namespace Magos
 {
     public class Mago
@@ -8,6 +8,7 @@ namespace Magos
         public string Descripcion {get;}
         public string Lore {get;set;}
         public int Vida{get;set;}
+        public List<object> ListaItems;
         public Mago(string nombre, string lore)
         {
             this.Nombre = nombre;
@@ -15,5 +16,24 @@ namespace Magos
             this.Lore = lore;
             this.Vida = 90;
         }
-    }   
-}
+
+        public List<object> listaItems
+        {
+            get
+            {
+                return this.ListaItems;
+            }
+            set
+            {
+                if (this.ListaItems.Count <= 5 )
+                {
+                    this.ListaItems.Add(value);
+                }
+                else
+                {
+                    Console.WriteLine("Inventario lleno");
+                }           
+            }
+        }
+    }
+} 

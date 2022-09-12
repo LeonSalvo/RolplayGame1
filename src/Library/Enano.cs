@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 namespace Library
 {
     public class Enano
@@ -8,6 +8,8 @@ namespace Library
         public string Descripcion {get;}
         public string Lore {get;set;}
         public int Vida{get;set;}
+        public List<object> ListaItems;
+
         public Enano(string nombre, string lore)
         {
             this.Nombre = nombre;
@@ -15,5 +17,24 @@ namespace Library
             this.Lore = lore;
             this.Vida = 120;
         }
-    }   
-}
+
+        public List<object> listaItems
+        {
+            get
+            {
+                return this.ListaItems;
+            }
+            set
+            {
+                if (this.ListaItems.Count <= 5 )
+                {
+                    this.ListaItems.Add(value);
+                }
+                else
+                {
+                    Console.WriteLine("Inventario lleno");
+                }           
+            }
+        }   
+    }
+}   
