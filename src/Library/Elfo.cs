@@ -32,21 +32,21 @@ namespace Roleplay
             {
                 Enano personaje = (Enano) personaje2;
                 personaje.Vida -= this.Arma.ValorObjeto + personaje.Armadura.ValorObjeto; 
-                return "si";
+                return $"{this.Nombre} atacó a {personaje}, realizando {this.Arma.ValorObjeto - personaje.Armadura.ValorObjeto}";
             }
             else
             if (personaje2.GetType().IsInstanceOfType(comprobadorElfo))                
             {
                 Elfo personaje = (Elfo) personaje2;
                 personaje.Vida -= this.Arma.ValorObjeto + personaje.Armadura.ValorObjeto; 
-                return "si";
+                return $"{this.Nombre} atacó a {personaje}, realizando {this.Arma.ValorObjeto - personaje.Armadura.ValorObjeto}";
             }
             else
             if (personaje2.GetType().IsInstanceOfType(comprobadorMago))                
             {
                 Mago personaje = (Mago) personaje2;
                 personaje.Vida -= this.Arma.ValorObjeto + personaje.Armadura.ValorObjeto; 
-                return "si";
+                return $"{this.Nombre} atacó a {personaje}, realizando {this.Arma.ValorObjeto - personaje.Armadura.ValorObjeto}";
             }
             else
             {

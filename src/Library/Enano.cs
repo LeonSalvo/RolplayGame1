@@ -17,26 +17,42 @@ namespace Roleplay
             this.Descripcion = "Los enanos son seres temperamentales, muy buenos en combate con las armas, físicamente fuertes, con mucha resistencia y leales a sus amigos.";
             this.Lore = lore;
             this.Vida = 120;
+            this.Arma = new Items("Puños", 10);
+            this.Armadura = new Items("Sin armadura", 5);
         }
 
         public string Atacar(object personaje2)
         {
-            var personajeType = personaje2.GetType();
             Enano comprobadorEnano = new Enano("comprobador","");
-            if (personajeType.IsInstanceOfType(comprobadorEnano))
+            Elfo comprobadorElfo = new Elfo("comprobador","");
+            Mago comprobadorMago = new Mago("comprobador","");
+            
+
+
+            if (personaje2.GetType().IsInstanceOfType(comprobadorEnano))
             {
-                this.AtacarEnano(personaje2);
-                return "si";
+                Enano personaje = (Enano) personaje2;
+                personaje.Vida -= this.Arma.ValorObjeto + personaje.Armadura.ValorObjeto; 
+                return $"{this.Nombre} atacó a {personaje}, realizando {this.Arma.ValorObjeto - personaje.Armadura.ValorObjeto}";
+            }
+            else
+            if (personaje2.GetType().IsInstanceOfType(comprobadorElfo))                
+            {
+                Elfo personaje = (Elfo) personaje2;
+                personaje.Vida -= this.Arma.ValorObjeto + personaje.Armadura.ValorObjeto; 
+                return $"{this.Nombre} atacó a {personaje}, realizando {this.Arma.ValorObjeto - personaje.Armadura.ValorObjeto}";
+            }
+            else
+            if (personaje2.GetType().IsInstanceOfType(comprobadorMago))                
+            {
+                Mago personaje = (Mago) personaje2;
+                personaje.Vida -= this.Arma.ValorObjeto + personaje.Armadura.ValorObjeto; 
+                return $"{this.Nombre} atacó a {personaje}, realizando {this.Arma.ValorObjeto - personaje.Armadura.ValorObjeto}";
             }
             else
             {
-                return "no";
+                return "Hubo un error en las clases";
             }
         }
-
-        public void AtacarEnano(Enano personaje2)
-        {
-            personaje2.Vida -= this.Arma.ValorObjeto + personaje2.Armadura.ValorObjeto;
-        }
-    }
-}   
+    }   
+}
