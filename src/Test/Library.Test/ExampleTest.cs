@@ -8,9 +8,8 @@ namespace Test.Library
     {
 
         [Test]
-        public void dummyTest()
+        public void TestAtacarEnano()
         {
-            Assert.True(true);
         }
 
     }

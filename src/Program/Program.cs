@@ -8,9 +8,6 @@ namespace Roleplay
         {
             Enano enano = new Enano("hola","si");
             Elfo elfo = new Elfo("hola","si");
-            elfo.Atacar(enano);
-            Console.WriteLine(enano.Vida);
-
         }
     }
 }
