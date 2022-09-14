@@ -18,8 +18,8 @@ namespace Roleplay
             this.Descripcion = "Los elfos son criaturas supernaturales que también poseen características mágicas, y en general son conocidos por ayudar a los demás.";
             this.Lore = lore;
             this.Vida = 80;
-            this.Arma = new Items("Puños", 10);
-            this.Armadura = new Items("Sin armadura", 5);
+            this.ListaItems = new Items("Puños", 10, 0);
+            this.ListaItems = new Items("Sin armadura", 5);
         }
 
 
