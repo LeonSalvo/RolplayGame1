@@ -12,6 +12,7 @@ namespace Roleplay
 
         public Enano(string nombre, string lore)
         {
+            this.ListaItems = new List<Items>();
             this.Nombre = nombre;
             this.Descripcion = "Los enanos son seres temperamentales, muy buenos en combate con las armas, físicamente fuertes, con mucha resistencia y leales a sus amigos.";
             this.Lore = lore;

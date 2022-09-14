@@ -12,12 +12,14 @@ namespace Roleplay
 
         public Mago(string nombre, string lore)
         {
+            this.ListaItems = new List<Items>();
             this.Nombre = nombre;
             this.Descripcion = "Los magos, también conocidos como Istari, tienen el dominio de la mágia, que provee capacidades de ataque y de defensa. La mágia es innata a ellos, aunque pueden adquirir más mediente el estudio de la asignatura, y mediante elementos que la potencian.";
             this.Lore = lore;
             this.Vida = 90;
             this.ListaItems.Add(new Items("Puños", 10, 0));
             this.ListaItems.Add(new Items("Sin armadura", 0, 5));
+
         }
 
         public void Atacar(object personaje2)

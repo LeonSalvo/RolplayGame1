@@ -14,6 +14,7 @@ namespace Roleplay
 
         public Elfo(string nombre, string lore)
         {
+            this.ListaItems = new List<Items>();
             this.Nombre = nombre;
             this.Descripcion = "Los elfos son criaturas supernaturales que también poseen características mágicas, y en general son conocidos por ayudar a los demás.";
             this.Lore = lore;
