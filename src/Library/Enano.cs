@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-namespace Library
+namespace Roleplay
 {
     public class Enano
     {
@@ -8,7 +8,8 @@ namespace Library
         public string Descripcion {get;}
         public string Lore {get;set;}
         public int Vida{get;set;}
-        public List<object> ListaItems;
+        public Items Arma{get;set;}
+        public Items Armadura{get;set;}
 
         public Enano(string nombre, string lore)
         {
@@ -18,23 +19,24 @@ namespace Library
             this.Vida = 120;
         }
 
-        public List<object> listaItems
+        public string Atacar(object personaje2)
         {
-            get
+            var personajeType = personaje2.GetType();
+            Enano comprobadorEnano = new Enano("comprobador","");
+            if (personajeType.IsInstanceOfType(comprobadorEnano))
             {
-                return this.ListaItems;
+                this.AtacarEnano(personaje2);
+                return "si";
             }
-            set
+            else
             {
-                if (this.ListaItems.Count <= 5 )
-                {
-                    this.ListaItems.Add(value);
-                }
-                else
-                {
-                    Console.WriteLine("Inventario lleno");
-                }           
+                return "no";
             }
-        }   
+        }
+
+        public void AtacarEnano(Enano personaje2)
+        {
+            personaje2.Vida -= this.Arma.ValorObjeto + personaje2.Armadura.ValorObjeto;
+        }
     }
 }   

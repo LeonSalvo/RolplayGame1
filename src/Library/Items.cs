@@ -1,6 +1,6 @@
 using System;
 // hola, pude :)
-namespace Library
+namespace Roleplay
 {
     public class Items
     {
