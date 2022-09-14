@@ -5,12 +5,14 @@ namespace Roleplay
     public class Items
     {
         public string Descripcion {get;}
-        public int ValorObjeto {get;set;}
+        public int Daño {get;set;}
+        public int Armadura{get;set;}
 
-        public Items(string descripcion, int valorObjeto)
+        public Items(string descripcion, int daño, int armadura)
         {
             this.Descripcion = descripcion;
-            this.ValorObjeto = valorObjeto;
+            this.Daño = daño;
+            this.Armadura = armadura;
         }
     }
 }

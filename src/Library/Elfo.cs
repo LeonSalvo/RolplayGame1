@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+
 namespace Roleplay
 {
     public class Elfo
@@ -7,8 +9,8 @@ namespace Roleplay
         public string Descripcion {get;}
         public string Lore {get;set;}
         public int Vida{get;set;}
-        public Items Arma{get;set;}
-        public Items Armadura{get;set;}
+        public List<Items> ListaItems{get; set;}
+
 
         public Elfo(string nombre, string lore)
         {
