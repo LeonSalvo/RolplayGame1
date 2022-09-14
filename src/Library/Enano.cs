@@ -8,8 +8,7 @@ namespace Roleplay
         public string Descripcion {get;}
         public string Lore {get;set;}
         public int Vida{get;set;}
-        public Items Arma{get;set;}
-        public Items Armadura{get;set;}
+        public List<Items> ListaItems {get;set;}
 
         public Enano(string nombre, string lore)
         {
@@ -17,8 +16,8 @@ namespace Roleplay
             this.Descripcion = "Los enanos son seres temperamentales, muy buenos en combate con las armas, físicamente fuertes, con mucha resistencia y leales a sus amigos.";
             this.Lore = lore;
             this.Vida = 120;
-            this.Arma = new Items("Puños", 10);
-            this.Armadura = new Items("Sin armadura", 5);
+            this.ListaItems.Add(new Items("Puños", 10, 0));
+            this.ListaItems.Add(new Items("Sin armadura", 0, 5));
         }
 
         public string Atacar(object personaje2)
